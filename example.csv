@@ -1,0 +1,6 @@
+id,name,title,department,managerId,email,imageUrl
+1,John Doe,CEO,Executive,,john@example.com,
+2,Jane Smith,CTO,Technology,1,jane@example.com,
+3,Bob Wilson,Lead Developer,Technology,2,bob@example.com,
+4,Alice Brown,Project Manager,Technology,2,alice@example.com,
+5,Charlie Davis,Developer,Technology,3,charlie@example.com,
