@@ -58,8 +58,12 @@
   }
 }
 
+.bg-grid-black\/\[0\.02\] {
+  background-image: url("/bg-grid-black.svg");
+}
+
 .bg-grid-white\/\[0\.02\] {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.02)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+  background-image: url("/bg-grid-white.svg");
 }
 
 /* Organization Chart Styles */
@@ -99,8 +103,7 @@
 
 .node-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-color: hsl(var(--primary));
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .children-container {
@@ -108,64 +111,59 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin-top: 0.75rem;
-  width: 100%;
+  padding: 1rem 0;
 }
 
 .children-wrapper {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  gap: 1rem;
+  align-items: flex-start;
   position: relative;
-  padding-top: 0.75rem;
-  width: 100%;
+  padding: 1rem 0;
 }
 
-/* Vertical line from parent to horizontal line */
 .children-wrapper::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 50%;
-  width: 2px;
-  height: 0.75rem;
+  width: 1px;
+  height: 1rem;
   background-color: hsl(var(--border));
   transform: translateX(-50%);
 }
 
-/* Horizontal line connecting all children */
 .children-wrapper::after {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0.75rem;
-  left: calc(0.5rem + 100px);
-  right: calc(0.5rem + 100px);
-  height: 2px;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
   background-color: hsl(var(--border));
 }
 
 .child-node {
   position: relative;
-  padding-top: 0.75rem;
+  padding: 0 1rem;
 }
 
-/* Vertical lines to each child */
 .child-node::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0;
+  top: -1rem;
   left: 50%;
-  width: 2px;
-  height: 0.75rem;
+  width: 1px;
+  height: 1rem;
   background-color: hsl(var(--border));
   transform: translateX(-50%);
 }
 
-/* Single child special case */
 .children-wrapper:has(.child-node:only-child)::after {
   display: none;
 }
 
 .child-node:only-child::before {
-  height: 1.5rem;
+  display: none;
 }

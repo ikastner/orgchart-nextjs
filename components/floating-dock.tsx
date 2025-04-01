@@ -41,7 +41,12 @@ export function FloatingDock() {
         }}
       >
         {links.map(({ href, label, icon: Icon }) => (
-          <Link key={href} href={href}>
+          <Link 
+            key={href} 
+            href={href}
+            prefetch={true}
+            className="block"
+          >
             <motion.div
               className="relative p-3 rounded-full transition-colors hover:bg-accent"
               onHoverStart={() => setHoveredIcon(href)}
